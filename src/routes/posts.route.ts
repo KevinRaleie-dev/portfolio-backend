@@ -24,13 +24,13 @@ router.post('/create-post', async (req: express.Request, res: express.Response) 
   try {
     const post = await prisma.post.create({
       data: {
-          ...req.body
+        ...req.body,
       },
     });
 
     return res.status(200).json({
-        success: true,
-        post
+      success: true,
+      post,
     });
   } catch (error) {
     return res.status(400).json({

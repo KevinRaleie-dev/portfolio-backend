@@ -10,7 +10,7 @@
     "watch": "tsc -w",
     "lint": "eslint 'src/**/*.{js,ts}' --quiet --fix",
     "dev": "nodemon dist/main.js",
-    "start": "node dist/main.js"
+    "start": "ts-node src/main.ts"
   },
   "dependencies": {
     "@prisma/cli": "2.14.0",

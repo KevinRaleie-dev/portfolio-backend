@@ -12,8 +12,11 @@ function main() {
   app.use(helmet());
   app.use(morgan('tiny'));
   app.use(express.json());
-  app.use(express.urlencoded({extended: true}));
+  app.use(express.urlencoded({ extended: true }));
 
+  app.get('/', (_, res: express.Response) => {
+    res.send('Nothing to see here.');
+  });
   app.use('/posts', router);
 
   app.listen(Number(PORT), () => {
