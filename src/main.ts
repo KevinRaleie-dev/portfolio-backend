@@ -5,7 +5,7 @@ import morgan from 'morgan';
 import router from './routes/posts.route';
 
 function main() {
-  const { PORT } = process.env;
+  const PORT = Number(process.env.PORT) || 3000;
 
   const app = express();
 
@@ -19,8 +19,8 @@ function main() {
   });
   app.use('/posts', router);
 
-  app.listen(Number(PORT), () => {
-    console.log(`Server is running on http://localhost:${Number(PORT)}`);
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
   });
 }
 
