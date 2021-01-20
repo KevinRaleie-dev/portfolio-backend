@@ -14,10 +14,10 @@ function main() {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
-  app.get('/', (_, res: express.Response) => {
+  app.get('/api', (_, res: express.Response) => {
     res.send('Nothing to see here.');
   });
-  app.use('/posts', router);
+  app.use('/api/posts', router);
 
   app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
