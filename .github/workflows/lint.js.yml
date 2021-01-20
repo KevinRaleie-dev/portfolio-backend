@@ -6,19 +6,17 @@ name: Node.js CI
 on:
   push:
     branches: [ alpha ]
-  pull_request:
-    branches: [ alpha ]
-
+    
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: '12.x'
+        node-version: '14.x'
     - run: yarn install
     - run: yarn lint
