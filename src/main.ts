@@ -5,7 +5,7 @@ import morgan from 'morgan';
 import router from './routes/posts.route';
 
 function main() {
-  const PORT = Number(process.env.PORT) || 3000;
+  const PORT = 3000;
 
   const app = express();
 
