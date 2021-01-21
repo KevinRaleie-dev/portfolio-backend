@@ -22,10 +22,10 @@ jobs:
     - name: 'Lint the application'
       run: yarn lint
     - name: 'Run migration'
+      run: npx prisma db push --preview-feature
       env: 
         DATABASE_URL: ${{secrets.DATABASE_URL}}
         PORT: ${{secrets.PORT}}
-      run: npx prisma db push --preview-feature
     - name: 'Build the application'
       run: yarn build
     - name: 'Restart the server'
