@@ -21,11 +21,12 @@ jobs:
     - run: yarn install
     - name: 'Lint the application'
       run: yarn lint
-    - name: 'Run migration and build application'
+    - name: 'Run migration'
       env: 
         DATABASE_URL: ${{secrets.DATABASE_URL}}
         PORT: ${{secrets.PORT}}
       run: npx prisma migrate --backend init --preview-feature
+    - name: 'Build the application'
       run: yarn build
     - name: 'Restart the server'
       run: pm2 restart BackendAPI
