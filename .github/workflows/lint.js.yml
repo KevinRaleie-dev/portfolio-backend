@@ -19,6 +19,13 @@ jobs:
       with:
         node-version: '14.x'
     - run: yarn install
-    - run: yarn lint
-    - run: yarn build
-    - run: pm2 restart BackendAPI
+    - name: 'Lint the application'
+      run: yarn lint
+    - name: 'Run migration and build application'
+      env: 
+        DATABASE_URL: ${{secrets.DATABASE_URL}}
+        PORT: ${{secrets.PORT}}
+      run: npx prisma migrate --backend init --preview-feature
+      run: yarn build
+    - name: 'Restart the server'
+      run: pm2 restart BackendAPI
