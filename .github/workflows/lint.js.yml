@@ -24,8 +24,8 @@ jobs:
     - name: 'Run migration'
       run: npx prisma db push --preview-feature
       env: 
-        DATABASE_URL: ${{secrets.DATABASE_URL}}
-        PORT: ${{secrets.PORT}}
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        PORT: ${{ secrets.PORT }}
     - name: 'Build the application'
       run: yarn build
     - name: 'Restart the server'
