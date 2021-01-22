@@ -10,7 +10,6 @@ If you're interested in what im working with:
 
 * Node.js / Express with Typescript
 * Prisma2
-* PostgreSQL
 * GitHub actions / workflows
-* AWS CodePipeline
-* AWS Elastic Beanstalk
+* AWS RDS (PostgreSQL)
+* AWS EC2
