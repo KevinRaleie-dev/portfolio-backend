@@ -33,7 +33,6 @@ jobs:
     - name: 'Create env file'
       run: |
         cat > .env <<- "EOF"
-        PORT=${{ env.PORT }}
         DATABASE_URL=${{ env.DATABASE_URL }}
         EOF
     - name: 'Build the application'
