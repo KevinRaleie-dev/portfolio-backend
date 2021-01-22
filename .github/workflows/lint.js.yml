@@ -21,7 +21,7 @@ jobs:
     - run: yarn install
     - name: 'Lint the application'
       run: yarn lint
-    - name: 'Run migration'
+    - name: 'Run database migration'
       run: npx prisma db push --preview-feature
       env: 
         DATABASE_URL: ${{ secrets.DATABASE_URL }}
