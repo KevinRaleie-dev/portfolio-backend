@@ -9,6 +9,10 @@
       "esnext",
       "esnext.asynciterable"
     ],
+    "typeRoots": [
+      "./typing-stubs",
+      "./node_modules/@types"
+    ],
     "sourceMap": true,
     "outDir": "./dist",
     "moduleResolution": "node",

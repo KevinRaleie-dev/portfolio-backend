@@ -6,6 +6,11 @@ name: Node.js CI
 env:
   PORT: ${{ secrets.PORT }}
   DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  COOKIE: ${{ secrets.COOKIE }}
+  COOKIE_NAME: ${{ secrets.COOKIE_NAME }}
+  DB_SESSIONS: ${{ secrets.DB_SESSIONS }}
+  DB_URI: ${{ secrets.DB_URI }}
+  DB_NAME: ${{ secrets.DB_NAME }}
 
 on:
   push:
@@ -34,6 +39,11 @@ jobs:
       run: |
         cat > .env <<- "EOF"
         DATABASE_URL=${{ env.DATABASE_URL }}
+        COOKIE=${{ env.COOKIE }}
+        COOKIE_NAME=${{ env.COOKIE_NAME }}
+        DB_SESSIONS=${{ env.DB_SESSIONS }}
+        DB_URI=${{ env.DB_URI }}
+        DB_NAME=${{ env.DB_NAME }}
         EOF
     - name: 'Build the application'
       run: yarn build
