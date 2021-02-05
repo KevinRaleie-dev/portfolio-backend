@@ -11,6 +11,7 @@ env:
   DB_SESSIONS: ${{ secrets.DB_SESSIONS }}
   DB_URI: ${{ secrets.DB_URI }}
   DB_NAME: ${{ secrets.DB_NAME }}
+  ORIGIN: ${{ secrets.ORIGIN }}
 
 on:
   push:
@@ -44,6 +45,7 @@ jobs:
         DB_SESSIONS=${{ env.DB_SESSIONS }}
         DB_URI=${{ env.DB_URI }}
         DB_NAME=${{ env.DB_NAME }}
+        ORIGIN=${{ env.ORIGIN }}
         EOF
     - name: 'Build the application'
       run: yarn build

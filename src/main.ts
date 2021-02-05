@@ -4,6 +4,7 @@ import session from 'express-session';
 import MongoDBStore from 'connect-mongodb-session';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import cors from 'cors';
 import { __prod__ } from './utils/prod';
 import { apiLimiter } from './utils/limiter';
 import postsRoute from './routes/posts.route';
@@ -26,6 +27,11 @@ function main() {
 
   const app = express();
 
+  app.use(
+    cors({
+      origin: process.env.ORIGIN as string,
+    }),
+  );
   app.set('trust-proxy', 1);
   app.use(
     session({
