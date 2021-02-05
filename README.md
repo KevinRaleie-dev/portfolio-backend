@@ -11,5 +11,6 @@ If you're interested in what im working with:
 * Node.js / Express with Typescript
 * Prisma2
 * GitHub actions / workflows
+* MongoDB (Session storage)
 * AWS RDS (PostgreSQL)
 * AWS EC2
